@@ -9,7 +9,8 @@ function beatmapParser() {
     nbSpinners: 0,
     timingPoints: [],
     breakTimes: [],
-    hitObjects: []
+    hitObjects: [],
+    artist: ""
   };
 
   var osuSection;
