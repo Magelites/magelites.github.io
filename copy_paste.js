@@ -1,6 +1,6 @@
 function myFunction() {
     /* Get the text field */
-    var copyText = document.getElementById("myInput");
+    var copyText = document.getElementById("output");
   
     /* Select the text field */
     copyText.select();
