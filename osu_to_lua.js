@@ -97,6 +97,7 @@ module.export("osu_to_lua", function(osu_file_contents) {
 	})
 
 	append_to_output("local rtv = {}");
+	append_to_output(format("rtv.%s = \"%s\"","ModName",""));
 	append_to_output(format("rtv.%s = \"%s\"","AudioAssetId","rbxassetid://FILL_IN_AUDIO_ASSETID_HERE"));
 	append_to_output(format("rtv.%s = \"%s\"","AudioFilename",beatmap.Title));
 	append_to_output(format("rtv.%s = \"%s\"","AudioArtist",""));
