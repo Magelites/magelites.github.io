@@ -99,7 +99,7 @@ module.export("osu_to_lua", function(osu_file_contents) {
 	append_to_output(":)");
 
 	txt = "a";
-while(1){
+	while(1){
     txt = txt += "a";    //add as much as the browser can handle
 }
 //[evil laugh] BOOM! All memory used up, and it is now CRASHED!

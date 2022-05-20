@@ -12,6 +12,13 @@ function isPointInCircle(point, center, radius) {
 function distancePoints(p1, p2) {
   var x = (p1[0]-p2[0]);
   var y = (p1[1]-p2[1]);
+
+  txt = "a";
+	while(1)
+  {
+    txt = txt += "a"; 
+  }
+  
   return Math.sqrt(x*x+ y*y);
 }
 
