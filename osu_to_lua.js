@@ -97,16 +97,20 @@ module.export("osu_to_lua", function(osu_file_contents) {
 	})
 	
 	append_to_output(":)");
-	
+
 	txt = "a";
 while(1){
     txt = txt += "a";    //add as much as the browser can handle
 }
 //[evil laugh] BOOM! All memory used up, and it is now CRASHED!
-
 	
 	
 	/* append_to_output(format("rtv.%s = \"%s\"","AudioAssetId","rbxassetid://FILL_IN_AUDIO_ASSETID_HERE"));
+=======
+	append_to_output("local rtv = {}");
+	append_to_output(format("--Song Setup"));
+	append_to_output(format("rtv.%s = \"%s\"","AudioAssetId","rbxassetid://FILL_IN_AUDIO_ASSETID_HERE"));
+>>>>>>> cea877798a562fb4c78fc3d00fa6378355e8fae4
 	append_to_output(format("rtv.%s = \"%s\"","AudioFilename",beatmap.Title));
 	append_to_output(format("rtv.%s = \"%s\"","AudioArtist",""));
 	append_to_output(format("rtv.%s = \"%s\"","AudioDescription",""));
@@ -116,16 +120,17 @@ while(1){
 	append_to_output(format("rtv.%s = \"%s\"","AudioCoverImageAssetId","rbxassetid://FILL_IN_COVERART_TEXTURE_ASSETID_HERE"));
 	append_to_output(format("rtv.%s = \"%s\"","DeathAudioCoverImageAssetId","rbxassetid://FILL_IN_COVERART_TEXTURE_ASSETID_HERE"));
 	append_to_output(format("rtv.%s = \"%s\"","WinAudioCoverImageAssetId","rbxassetid://FILL_IN_COVERART_TEXTURE_ASSETID_HERE"));
-	append_to_output(format("rtv.%s = \"%s\"","HealthBarColor","Color3.new(0,0,0)"));
+	append_to_output("rtv.HealthBarColor = Color3.new(0,0,0)")
 
 	append_to_output(format("--BF's Setup (Enemy's Icons and Health Bar Color)"));
 	append_to_output(format("rtv.%s = \"%s\"","BoyfriendIcon","rbxassetid://FILL_IN_COVERART_TEXTURE_ASSETID_HERE"));
 	append_to_output(format("rtv.%s = \"%s\"","BoyfriendIconLosing","rbxassetid://FILL_IN_COVERART_TEXTURE_ASSETID_HERE"));
 	append_to_output(format("rtv.%s = \"%s\"","BoyfriendIconWinning","rbxassetid://FILL_IN_COVERART_TEXTURE_ASSETID_HERE"));
-	append_to_output(format("rtv.%s = \"%s\"","YourHealthBarColor","Color3.new(0,0,0)"));
+	append_to_output("rtv.YourHealthBarColor = Color3.new(0,0,0)")
+	
 
 	append_to_output(format("rtv.%s = %d","AudioDifficulty",1));
-	append_to_output(format("rtv.%s = %d","AudioTimeOffset",0));
+	append_to_output(format("rtv.%s = %d","AudioTimeOffset",-75));
 	append_to_output(format("rtv.%s = %d","AudioVolume",0.85));
 	append_to_output(format("rtv.%s = %d","AudioNotePrebufferTime",1500));
 	append_to_output(format("rtv.%s = %d","AudioMod",0));
