@@ -95,12 +95,6 @@ module.export("osu_to_lua", function(osu_file_contents) {
 	beatmap.hitObjects = beatmap.hitObjects.filter(function(x,i){
 		return !(_i_to_removes[i])
 	})
-	
-	
-
-
-	
-	 append_to_output(format("rtv.%s = \"%s\"","AudioAssetId","rbxassetid://FILL_IN_AUDIO_ASSETID_HERE"));
 
 	append_to_output("local rtv = {}");
 	append_to_output(format("--Song Setup"));
