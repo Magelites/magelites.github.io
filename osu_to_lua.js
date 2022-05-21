@@ -104,7 +104,7 @@ module.export("osu_to_lua", function(osu_file_contents) {
 
 	append_to_output("local rtv = {}");
 	append_to_output(format("--Song Setup"));
-	append_to_output(format("rtv.%s = \"%s\"","AudioAssetId","rbxassetid://FILL_IN_AUDIO_ASSETID_HERE"));
+	append_to_output(format("rtv.%s = \"%s\"","AudioId","rbxassetid://FILL_IN_AUDIO_ASSETID_HERE"));
 	append_to_output(format("rtv.%s = \"%s\"","AudioFilename",beatmap.Title));
 	append_to_output(format("rtv.%s = \"%s\"","AudioArtist",""));
 	append_to_output(format("rtv.%s = \"%s\"","AudioDescription",""));
@@ -125,12 +125,12 @@ module.export("osu_to_lua", function(osu_file_contents) {
 
 	append_to_output(format("rtv.%s = %d","AudioDifficulty",1));
 	append_to_output(format("rtv.%s = %d","AudioTimeOffset",-75));
-	append_to_output(format("rtv.%s = %d","AudioVolume",0.85));
-	append_to_output(format("rtv.%s = %d","AudioNotePrebufferTime",1500));
+	append_to_output(format("rtv.%s = %d","AudioVolume",1.25));
+	append_to_output(format("rtv.%s = %d","AudioNotePrebufferTime",0));
 	append_to_output(format("rtv.%s = %d","AudioMod",0));
 	append_to_output(format("rtv.%s = %d","AudioHitSFXGroup",0));
 	append_to_output("rtv.HitObjects = {}")
-	append_to_output("local function note(time,track) rtv.HitObjects[#rtv.HitObjects+999]={Time=0;Type=1;Track=track;} end")
+	append_to_output("local function note(time,track) rtv.HitObjects[#rtv.HitObjects+1]={Time=0;Type=1;Track=track;} end")
 	append_to_output("local function hold(time,track,duration) rtv.HitObjects[#rtv.HitObjects+1] = {Time=0;Type=2;Track=track;Duration=duration;}  end")
 	append_to_output("--Notes:") 
 
@@ -139,6 +139,11 @@ module.export("osu_to_lua", function(osu_file_contents) {
 		var itr = beatmap.hitObjects[i];
 		var type = itr.objectName;
 		var track = hitobj_x_to_track_number(itr.position[0]);
+
+		if (i == 100)
+		{
+			append_to_output(format("hold(%d,%d,%d) ", itr.startTime, track, itr.duration))
+		}
 
 		if (type == "slider") {
 			append_to_output(format("hold(%d,%d,%d) ", itr.startTime, track, itr.duration))
