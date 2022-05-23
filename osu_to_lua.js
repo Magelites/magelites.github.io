@@ -114,9 +114,9 @@ module.export("osu_to_lua", function(osu_file_contents) {
 	append_to_output(format("['WinningPose'] = \%s\; };", "Vector2.new(0,0)"));
 	
 	append_to_output(format("['Boyfriend'] = "));
-	append_to_output(format("{['IconSet'] = \%s\;", "'rbxassetid://9693031527'"));
+	append_to_output(format("{['IconSet'] = \%s\;", "'rbxassetid://9691046354'"));
 	append_to_output(format("['IconSize'] = \%s\;", "Vector2.new(-150,150)"));
-	append_to_output(format("['HPColor'] = \%s\;", "Color3.fromRGB(217,59,215)"));
+	append_to_output(format("['HPColor'] = \%s\;", "Color3.fromRGB(49, 176, 209)"));
 
 	append_to_output(format("['NeutralPose'] = \%s\;", "Vector2.new(150,0)"));
 	append_to_output(format("['LosingPose'] = \%s\;", "Vector2.new(300,0)"));
@@ -128,7 +128,7 @@ module.export("osu_to_lua", function(osu_file_contents) {
 	append_to_output(format("rtv.%s = %d","AudioDifficulty",1));
 	append_to_output(format("rtv.%s = %d","AudioTimeOffset",-75));
 	append_to_output(format("rtv.%s = %d","AudioVolume",1.25));
-	append_to_output(format("rtv.%s = %d","AudioNotePrebufferTime",0));
+	append_to_output(format("rtv.%s = %d","AudioNotePrebufferTime",1500));
 	append_to_output(format("rtv.%s = %d","AudioMod",0));
 	append_to_output(format("rtv.%s = %d","AudioHitSFXGroup",0));
 	append_to_output("rtv.HitObjects = {}")
