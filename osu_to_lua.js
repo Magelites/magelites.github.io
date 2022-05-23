@@ -105,7 +105,7 @@ module.export("osu_to_lua", function(osu_file_contents) {
 	
 	append_to_output(format("rtv.CharSet = {"));
 	append_to_output(format("['Opponent'] = "));
-	append_to_output(format("{['IconSet'] = \%s\;", "rbxassetid://0"));
+	append_to_output(format("{['IconSet'] = \%s\;", "'rbxassetid://0'"));
 	append_to_output(format("['IconSize'] = \%s\;", "Vector2.new(150,150)"));
 	append_to_output(format("['HPColor'] = \%s\;", "Color3.fromRGB(255,0,0)"));
 
@@ -114,7 +114,7 @@ module.export("osu_to_lua", function(osu_file_contents) {
 	append_to_output(format("['WinningPose'] = \%s\; };", "Vector2.new(0,0)"));
 	
 	append_to_output(format("['Boyfriend'] = "));
-	append_to_output(format("{['IconSet'] = \%s\;", "rbxassetid://9693031527"));
+	append_to_output(format("{['IconSet'] = \%s\;", "'rbxassetid://9693031527'"));
 	append_to_output(format("['IconSize'] = \%s\;", "Vector2.new(-150,150)"));
 	append_to_output(format("['HPColor'] = \%s\;", "Color3.fromRGB(217,59,215)"));
 
