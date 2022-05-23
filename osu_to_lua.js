@@ -100,30 +100,30 @@ module.export("osu_to_lua", function(osu_file_contents) {
 	append_to_output(format("--Song Setup"));
 	append_to_output(format("rtv.%s = \"%s\"","AudioAssetId","rbxassetid://FILL_IN_AUDIO_ASSETID_HERE"));
 	append_to_output(format("rtv.%s = \"%s\"","AudioFilename",beatmap.Title));
-	append_to_output(format("rtv.%s = ","BPM"));
+	append_to_output(format("rtv.%s = 200","BPM"));
 	append_to_output(format("rtv.%s = \"%s\"","AudioArtist",""));
 	
 	append_to_output(format("rtv.CharSet = {"));
 	append_to_output(format("['Opponent'] = "));
-	append_to_output(format("{['IconSet'] = \%s\";", "rbxassetid://0"));
-	append_to_output(format("['IconSize'] = \%s\";", "Vector2.new(150,150)"));
-	append_to_output(format("['HPColor'] = \%s\";", "Color3.fromRGB(255,0,0)"));
+	append_to_output(format("{['IconSet'] = \%s\;", "rbxassetid://0"));
+	append_to_output(format("['IconSize'] = \%s\;", "Vector2.new(150,150)"));
+	append_to_output(format("['HPColor'] = \%s\;", "Color3.fromRGB(255,0,0)"));
 
-	append_to_output(format("['NeutralPose'] = \%s\";", "Vector2.new(0,0)"));
-	append_to_output(format("['LosingPose'] = \%s\";", "Vector2.new(150,0)"));
-	append_to_output(format("['WinningPose'] = \%s\"; };", "Vector2.new(0,0)"));
+	append_to_output(format("['NeutralPose'] = \%s\;", "Vector2.new(0,0)"));
+	append_to_output(format("['LosingPose'] = \%s\;", "Vector2.new(150,0)"));
+	append_to_output(format("['WinningPose'] = \%s\; };", "Vector2.new(0,0)"));
 	
 	append_to_output(format("['Boyfriend'] = "));
-	append_to_output(format("{['IconSet'] = \%s\";", "rbxassetid://9693031527"));
-	append_to_output(format("['IconSize'] = \%s\";", "Vector2.new(-150,150)"));
-	append_to_output(format("['HPColor'] = \%s\";", "Color3.fromRGB(217,59,215)"));
+	append_to_output(format("{['IconSet'] = \%s\;", "rbxassetid://9693031527"));
+	append_to_output(format("['IconSize'] = \%s\;", "Vector2.new(-150,150)"));
+	append_to_output(format("['HPColor'] = \%s\;", "Color3.fromRGB(217,59,215)"));
 
-	append_to_output(format("['NeutralPose'] = \%s\";", "Vector2.new(150,0)"));
-	append_to_output(format("['LosingPose'] = \%s\";", "Vector2.new(300,0)"));
-	append_to_output(format("['WinningPose'] = \%s\"; };}", "Vector2.new(150,0)"));
+	append_to_output(format("['NeutralPose'] = \%s\;", "Vector2.new(150,0)"));
+	append_to_output(format("['LosingPose'] = \%s\;", "Vector2.new(300,0)"));
+	append_to_output(format("['WinningPose'] = \%s\; };}", "Vector2.new(150,0)"));
 
-	append_to_output(format("rtv.%s = %s","HealthBarType","Classic"));
-	append_to_output(format("rtv.%s = %s","Background","rbxassetid://0"));
+	append_to_output(format("rtv.%s = %s","HealthBarType","'Classic'"));
+	append_to_output(format("rtv.%s = %s","Background",'"rbxassetid://0"'));
 
 	append_to_output(format("rtv.%s = %d","AudioDifficulty",1));
 	append_to_output(format("rtv.%s = %d","AudioTimeOffset",-75));
@@ -143,7 +143,7 @@ module.export("osu_to_lua", function(osu_file_contents) {
 		var track = hitobj_x_to_track_number(itr.position[0]);
 
 		if (type == "slider") {
-			append_to_output(format("hold(%d,%d) ", itr.startTime, track, itr.duration))
+			append_to_output(format("hold(%d,%d,%d) ", itr.startTime, track, itr.duration))
 		} else {
 			append_to_output(format("note(%d,%d) ",itr.startTime, track))
 		}
