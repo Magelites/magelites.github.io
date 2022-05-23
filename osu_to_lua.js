@@ -132,8 +132,8 @@ module.export("osu_to_lua", function(osu_file_contents) {
 	append_to_output(format("rtv.%s = %d","AudioMod",0));
 	append_to_output(format("rtv.%s = %d","AudioHitSFXGroup",0));
 	append_to_output("rtv.HitObjects = {}")
-	append_to_output("local function note(time,track) rtv.HitObjects[#rtv.HitObjects+1]={Time=math.sqrt(time);Type=1;Track=track;} end")
-	append_to_output("local function hold(time,track,duration) rtv.HitObjects[#rtv.HitObjects+1] = {Time=math.sqrt(time);Type=2;Track=track;Duration=duration;}  end")
+	append_to_output("local function note(time,track) rtv.HitObjects[#rtv.HitObjects+1]={Time=time;Type=1;Track=track;} end")
+	append_to_output("local function hold(time,track,duration) rtv.HitObjects[#rtv.HitObjects+1] = {Time=time;Type=2;Track=track;Duration=duration;}  end")
 	append_to_output("-- Notes:") 
 
 
