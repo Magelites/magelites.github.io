@@ -127,7 +127,7 @@ module.export("osu_to_lua", function(osu_file_contents) {
 
 	append_to_output(format("rtv.%s = %d","AudioDifficulty",1));
 	append_to_output(format("rtv.%s = %d","AudioTimeOffset",-75));
-	append_to_output(format("rtv.%s = %d","AudioVolume",1.25));
+	append_to_output(format("rtv.%s = %d","AudioVolume",.75));
 	append_to_output(format("rtv.%s = %d","AudioNotePrebufferTime",1500));
 	append_to_output(format("rtv.%s = %d","AudioMod",0));
 	append_to_output(format("rtv.%s = %d","AudioHitSFXGroup",0));
