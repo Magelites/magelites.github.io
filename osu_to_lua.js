@@ -102,7 +102,8 @@ module.export("osu_to_lua", function(osu_file_contents) {
 	append_to_output(format("rtv.%s = \"%s\"","AudioFilename",beatmap.Title));
 	append_to_output(format("rtv.%s = 200","BPM"));
 	append_to_output(format("rtv.%s = \"%s\"","AudioArtist",""));
-	
+	append_to_output(format("rtv.%s = \"%s\"","ModName",""));
+
 	append_to_output(format("rtv.CharSet = {"));
 	append_to_output(format("['Opponent'] = "));
 	append_to_output(format("{['IconSet'] = \%s\;", "'rbxassetid://0'"));
