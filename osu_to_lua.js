@@ -126,6 +126,7 @@ module.export("osu_to_lua", function(osu_file_contents) {
 	append_to_output(format("rtv.%s = %s","HealthBarType","'Classic'"));
 	append_to_output(format("rtv.%s = %s","Background",'"rbxassetid://0"'));
 
+	append_to_output(format("rtv.%s = %d","FirstNoteTime",beatmap.hitObjects[1].startTime));
 	append_to_output(format("rtv.%s = %d","AudioDifficulty",1));
 	append_to_output(format("rtv.%s = %d","AudioTimeOffset",-75));
 	append_to_output(format("rtv.%s = %d","AudioVolume",.75));
