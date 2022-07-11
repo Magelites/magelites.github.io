@@ -42,6 +42,12 @@ $(function(){
 			var osu_file_str = $("#in").val()
 			$("#out").val(module.require("osu_to_lua")(osu_file_str))
   })
+
+  $("#submitFB").click(function(){
+    $("#out").val("converting...")
+			var osu_file_str = $("#in").val()
+			$("#out").val(module.require("osu_to_luaFB")(osu_file_str))
+  })
 })
 </script>
 
@@ -61,9 +67,10 @@ $(function(){
   Paste OSU.txt here
 </textarea>
 <br/>
-<button id="submit">CONVERT</button>
+<button id="submit">Convert to FNM</button>
 <br/>
 <br/>
+<button id="submitFB">Convert to FunkyBeats</button>
 <br/>
 <br/>
 <textarea id="out" style="width:1000px;height:200px" readonly>
